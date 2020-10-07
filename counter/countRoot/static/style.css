@@ -1,0 +1,11 @@
+a, button{
+    text-decoration: none;
+    width: 80px;
+    padding: 10px;
+    background-color: goldenrod;
+    color: white;
+}
+
+*{
+    text-align: center;
+}

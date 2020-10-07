@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <h1>Counter</h1>
+
+    {{request.session.num}} times.<br><br><br><br><br><br>
+
+    <a href="/destroy_session">Reset</a>
+    <a href="/add_2">+2</a><br><br><br><br><br>
+
+    <form action='/selection' method='post'>
+        {% csrf_token %}
+        <select name='selection' id='selection'>
+
+
+        </select>
+
+        <button type='submit'>Submit</button>
+    </form>
+    <br>
+
+    <!-- BONUS: Adjust your code to display both how many times the user has actually visited the page, as well as the value of the counter, given the above functionality -->
+    <!-- <h3>Actual number of times visited this page: {{request.session.num}}</h3>
+    <h3>Counter Value: {{request.session.num}}</h3> -->
+
+     
+    
+
+<!-- BONUS: Add a form that allows the user to specify the increment of the counter and have the counter increment accordingly -->
+<script>
+for(var i = 1 ; i <= 10 ; i++){
+    document.getElementById('selection').innerHTML += "<option value="+i+">"+i+"</option>";
+    }
+</script>   
+</body>
+</html>
